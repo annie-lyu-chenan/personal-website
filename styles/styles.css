@@ -1,0 +1,504 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    max-width: 90vw;
+    margin: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+h1 {
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+    font-size: 3rem;
+    font-style: italic;
+}
+
+h2 {
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+h3 {
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    font-style: italic;
+    padding-left: 1rem;
+    margin-top: 3rem;
+    border-left: 0.5rem solid;
+    line-height: 2rem;
+    box-sizing: border-box;
+}
+
+#projects h2 {
+    font-weight: 350;
+}
+
+p {
+    font-family: 'Bitter', serif;
+    font-weight: 350;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    font-family: 'Bitter', serif;
+    font-weight: 350;
+    font-size: 1.2rem;
+}
+
+.self-intro span {
+    font-weight: 500;
+}
+
+#homepage {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#intro {
+    margin-top: 3rem;
+}
+
+#homepage h1 {
+    flex: 1;
+}
+
+.self-intro {
+    flex: 1;
+}
+
+.self-intro ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.self-intro p {
+    margin-top: 1.5rem;
+}
+
+#global-top-bar {
+    background-color: transparent;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1rem;
+    width: 100vw;
+    z-index: 10;
+}
+
+#global-bottom-bar {
+    background-color: transparent;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.5rem;
+    width: 100vw;
+    z-index: 10;
+}
+
+.section-bar {
+    flex: 1;
+    height: 100%;
+}
+
+.page {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 0;
+}
+
+#bar-research {
+    background-color: #635BFF;
+}
+
+#bar-insight {
+    background-color: #C2E427;
+}
+
+#bar-design {
+    background-color: #FFA858;
+}
+
+#projects [id ^= "bar-"] {
+    height: 0.15rem;
+    width: 50%;
+}
+
+#toc {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#projects {
+    flex: 1;
+}
+
+#all-tags{
+    flex: 1;
+}
+
+#projects > div {
+    margin-bottom: 5rem;
+}
+
+#projects h2 {
+    margin-top: 0; 
+    padding-top: 0.75rem;
+}
+
+[class $= 'items'] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 2rem; 
+    padding-right: 0.5rem;
+    overflow: hidden;
+}
+
+[class $= 'card'] {
+    flex: 0 1 48%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.research-card .card-image {
+    border-color: #635BFF;
+}
+
+.insight-card .card-image {
+    border-color: #C2E427;
+}
+
+.design-card .card-image {
+    border-color: #FFA858;
+}
+
+.card-image {
+    border: 1px solid; 
+    border-radius: 1rem;
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 9; 
+}
+
+.card-image img,
+.card-image video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+}
+
+
+#global-top-bar .section-bar.is-active {
+    flex-basis: 100%;
+    height: 1rem;
+    opacity: 1;
+    cursor: pointer;
+}
+
+#global-top-bar .section-bar.is-history {
+    flex-basis: 100%;
+    height: 0.5rem;
+    opacity: 0.8;
+}
+
+#research ul.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+#research .tags li, 
+#all-tags .research {
+    color: #635BFF;
+    border: 1px solid #635BFF;
+    border-radius: 1rem;
+    padding: 0.5rem 0.75rem;
+    width: fit-content;
+}
+
+#research .tags li:hover, 
+#all-tags .research:hover { 
+    box-shadow: 0 0 0 1px #635BFF99, 
+                0 6px 14px #635BFF40;
+    transform: translateY(-1px);
+}
+
+#research h1 + ul {
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+#insight ul.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+#insight .tags li, 
+#all-tags .insight {
+    color: #C2E427;
+    border: 1px solid #C2E427;
+    border-radius: 1rem;
+    padding: 0.5rem 0.75rem;
+    width: fit-content;
+}
+
+#insight .tags li:hover, 
+#all-tags .insight:hover { 
+    box-shadow: 0 0 0 1px #c2e42799, 
+                0 6px 14px #c2e42740;
+    transform: translateY(-1px);
+}
+
+#insight h1 + ul {
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+#design ul.tags {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+#design .tags li, 
+#all-tags .design {
+    color: #FFA858;
+    border: 1px solid #FFA858;
+    border-radius: 1rem;
+    padding: 0.5rem 0.75rem;
+    width: fit-content;
+}
+
+#design .tags li:hover, 
+#all-tags .design:hover { 
+    box-shadow: 0 0 0 1px #FFA85899, 
+                0 6px 14px #FFA85840;
+    transform: translateY(-1px);
+}
+
+#design h1 + ul {
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+#sticky {
+    padding-top: 4rem;
+    padding-bottom: 1.5rem;
+    position: sticky;
+    top: 0;
+    background-color: white; 
+    z-index: 5; 
+}
+
+#research h2, 
+#insight h2,
+#design h2 {
+    margin-top: 1.5rem;
+    font-style: italic;
+}
+
+#all-tags ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+#footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 250;
+    font-size: 1rem;
+}
+
+#contact-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 250;
+    font-size: 1rem;
+}
+
+footer {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+}
+
+#homepage ul li a, 
+#contact-footer li a {
+    color: #1F1F1F; 
+}
+
+#homepage ul li:hover, 
+#contact-footer li:hover {
+    text-shadow: 0 0 1px #1F1F1F99, 
+                0 6px 14px #1F1F1F40;
+    transform: translateY(-1px);
+}
+
+main#insight #top-bar {
+    background-color: #C2E427;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1.5rem;
+    width: 100vw;
+    z-index: 10;
+}
+
+main#insight {
+    max-width: 70vw;
+}
+
+main#insight #mother-section {
+    color: #C2E427;
+    white-space: nowrap;
+}
+
+main#insight .tags {
+    margin-top: 0;
+}
+
+#article-title {
+    display: flex; 
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-top: 4rem;
+}
+
+#article-content {
+    margin-top: 4rem;
+}
+
+#article-content #date, 
+#article-content #co-author {
+    font-style: italic;
+}
+
+#article-content #date {
+    font-weight: 350;
+    margin-bottom: 0.5rem; 
+    padding-bottom: 0;
+}
+
+#article-content #co-author {
+    font-weight: 250;
+    margin-top: 0; 
+    padding-top: 0;
+}
+
+.body-container {
+    position: relative;
+    margin-top: 3rem;
+}
+
+.slideshow {
+    width: 50%;
+    margin: 0 2rem 1rem 0; 
+    height: fit-content;
+    float: inline-start; 
+}
+
+.slideshow video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #C2E427;
+}
+
+main#insight h3 {
+    border-left: 0.5rem solid #C2E427;
+}
+
+#article-content h2 {
+    margin-top: 3rem;
+}
+
+.spreadbeats #strategies > li, 
+.spreadbeats #evaluation > li {
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
+
+.spreadbeats #strategies ul,
+.spreadbeats #evaluation ul {
+    list-style: disc;
+    font-size: 1rem;
+    line-height: 2rem;
+    margin: 0.5rem auto 1.5rem 2rem;
+    font-style: italic;
+}
+
+.spreadbeats #recommendations-list {
+    list-style: disc;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.spreadbeats details {
+    margin-top: 2rem;
+}
+
+.spreadbeats details summary {
+    font-family: 'Bitter', serif;
+    font-weight: 350;
+    font-size: 1.2rem;
+    color: #1F1F1F80;
+}
+
+summary::marker {
+    color: #C2E427;
+    font-size: 1rem; 
+}
+
+.spreadbeats .references p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #1F1F1F80;
+}
+
+main#insight #mother-section:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 1px #C2E42799, 
+                0 6px 14px #C2E42740;
+    transform: translateY(-2px);
+}

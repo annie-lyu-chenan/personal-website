@@ -5,13 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- PUT A TITLE IN HERE -->
-    <title>Fridge Mate</title>
+    <title>Demo</title>
     <!-- PUT A DESCRIPTION IN HERE -->
     <meta name="description" content="This is a demo" />
     <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
     <link rel="stylesheet" href="styles/normalize.css" />
     <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
-
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+    />
     <!-- LINK TO YOUR STYLES -->
     <link rel="stylesheet" href="styles/styles.css" />
     <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
@@ -21,38 +30,223 @@
   <body>
     <!-- YOUR HTML GOES HERE -->
      <main>
-        <section class = 'intro'>
-            <div id = 'title'>
-                <h1>Hello!</h1>
-                <div class = 'self-intro'>
-                    <p>I'm <span>Chenan (Annie) Lyu</span>, currently a second-year student at Boston University College of Communication. I care about how people express, interpret, and respond to what's being said. That's what pulled me into research, UX, and strategy: turning patterns into system that serve. </p>
-                    <ul>
-                        <li>Resume</li>
-                        <li>LinkedIn</li>
-                        <li>Contact</li>
-                        <li>English (US)</li>
-                    </ul>
-                </div>
+        <div id = 'global-top-bar'></div>
+
+        <section class = 'page' id = 'home'>
+          
+          <section id = 'intro'>
+            <div id = 'homepage'>
+
+              <h1>Hello!</h1>
+              <div class = 'self-intro'>
+                  <p>I'm <span>Chenan (Annie) Lyu</span>, a second-year student at Boston University College of Communication. I am generally interested in human behavior patterns, and I take the challenge of translating behavior patterns into meaningful strategies. This is what led me to academic research, marketing, and UX. </p>
+                  <ul>
+                      <li>
+                        <a href = 'files/CV_2026spring.pdf'>Resumé</a>
+                      </li>
+                      <li>
+                        <a href="https://www.linkedin.com/in/chenan-lyu-471806377">LinkedIn</a>
+                      </li>
+                      <li>
+                        <a href="mailto:annielyuchenan@gmail.com">Contact</a>
+                      </li>
+                      <li>Archive</li>
+                      <!--
+                      <li><i class="ph ph-globe"></i>English (US) <i class="ph ph-caret-circle-down"></i></li>
+                      -->
+                  </ul>
+              </div>
             </div>
+          </section>
+
+          <section id = 'toc'>
+            <section id = 'projects'>
+              <div class = 'project-item-research'>
+                  <div id = 'bar-research'></div>
+                  <h2>Research</h2>
+              </div>
+              <div class = 'project-item-writing'>
+                  <div id = 'bar-insight'></div>
+                  <h2>Insights</h2>
+              </div>
+              <div class = 'project-item-design'>
+                  <div id = 'bar-design'></div>
+                  <h2>Design</h2>
+              </div>
+            </section>
+
+            <section id = 'all-tags'>
+              <ul class = 'tags'>
+                <li class = 'research' id = 'conference'>#Conference</li>
+                <li class = 'research' id = 'course-work'>#CourseWork</li>
+                <li class = 'research' id = 'publication'>#Publication</li>
+                <li class = 'insight' id = 'case-studies'>#CaseStudies</li>
+                <li class = 'insight' id = 'mkt-research'>#MarketingResearch</li>
+                <li class = 'insight' id = 'journalism'>#Journalism</li>
+                <li class = 'insight' id = 'data-journalism'>#DataJournalism</li>
+                <li class = 'design' id = 'ux'>#UX</li>
+                <li class = 'design' id = 'front-end'>#FrontEnd</li>
+              </ul>
+            </section>
+          </section>
+
         </section>
-        <section class = 'projects'>
-            <div class = 'project-item-research'>
-                <div id = 'bar-research'></div>
-                <h2>Research</h2>
-            </div>
-            <div class = 'project-item-writing'>
-                <div id = 'bar-writing'></div>
-                <h2>Writing</h2>
-            </div>
-            <div class = 'project-item-design'>
-                <div id = 'bar-design'></div>
-                <h2>Design</h2>
-            </div>
+        
+        
+        <section class = 'page' id = 'research'>
+          
+          <h1 id = 'sticky'>Research</h1>
+          <ul class = 'tags'>
+            <li id = 'conference'>#Conference</li>
+            <li id = 'course-work'>#CourseWork</li>
+            <li id = 'publication'>#Publication</li>
+          </ul>
+
         </section>
+
+        <section class = 'page' id = 'insight'>
+
+          <h1 id = 'sticky'>Insights</h1>
+          <ul class = 'tags'>
+            <li id = 'case-studies'>#CaseStudies</li>
+            <li id = 'mkt-research'>#MarketingResearch</li>
+            <li id = 'journalism'>#Journalism</li>
+            <li id = 'data-journalism'>#DataJournalism</li>
+          </ul>
+
+          <section class = 'insight-items'>
+            
+            <div class = 'insight-card'>
+              <div class="card-image">
+                <video src="images/deck-cover.mp4" alt="Slide deck cover page preview" autoplay loop muted></video>
+              </div>
+              <div class="card-content">
+                <h2><span>Spreadbeats</span> Case Study</h2>
+                <ul class = 'tags'>
+                  <li id = 'case-studies'>#CaseStudies</li>
+                </ul>
+                <p>The case study analyzed the situation, objectives, programming, and evaluation of the <span>Spreadbeats</span> campaign, and offered recommendations for future IMC campaigns to further reposition Spotify as a multi-format advertising partner within the B2B market. </p>
+              </div>
+            </div>
+
+            <div class = 'insight-card'>
+              <div class="card-image">
+                <img src="images/pet-parents-cover.png" alt="Research report cover preview">
+              </div>
+              <div class="card-content">
+                <h2>How the Pet Parent Mindset Shape Supplements Perception? </h2>
+                <ul class = 'tags'>
+                  <li id = 'mkt-research'>#MarketingResearch</li>
+                </ul>
+                <p>The marketing research project examines how parenting mindset of pet owners shapes supplement choices and spending, thereby providing actionable guidance for Zesty Paws' product development and brand communication. </p>
+              </div>
+            </div>
+
+            <div class = 'insight-card'>
+              <div class="card-image">
+                <img src="images/marriage-thumbnail.png" alt="Infographic preview">
+              </div>
+              <div class="card-content">
+                <h2> From Romance to Partnership: How China's Gen Z Is Rethinking Love and Marriage? </h2>
+                <ul class = 'tags'>
+                  <li id = 'journalism'>#Journalism</li>
+                  <li id = 'data-journalism'>#DataJournalism</li>
+                </ul>
+                <p>The article and infographics discussed how attitudes shift toward marriage and romance among Chinese youth, highlighting the rise of “partnerships” as an alternative to traditional relationships. </p>
+              </div>
+            </div>
+
+            <div class = 'insight-card'>
+              <div class="card-image">
+                <img src="images/marriage-thumbnail.png" alt="Infographic preview">
+              </div>
+              <div class="card-content">
+                <h2>Feeding AI</h2>
+                <ul class = 'tags'>
+                  <li id = 'journalism'>#Journalism</li>
+                  <li id = 'data-journalism'>#DataJournalism</li>
+                </ul>
+                <p>The article and infographics focused on the overlooked effort behind AI's rapid development, contributed by “ghost workers” who feed AI with their human intelligence. </p>
+              </div>
+            </div>
+
+            <div class = 'insight-card'>
+              <div class="card-image">
+                <img src="images/bride-dress-cover.jpg" alt="A person sewing a bridal dress">
+              </div>
+              <div class="card-content">
+                <h2>Bridal Fashion Capital: How Chaozhou Holds Its Place in the Spotlight</h2>
+                <ul class = 'tags'>
+                  <li id = 'journalism'>#Journalism</li>
+                </ul>
+                <p>Chaozhou, once the world's bridal gown-making hub, is resorting to legacy, adaptability, and originality as it grapples with challenges ranging from a shifting market to the pandemic. </p>
+              </div>
+            </div>
+            
+          </section>
+
+        </section>
+
+        <section class = 'page' id = 'design'>
+
+          <h1 id = 'sticky'>Design</h1>
+          <ul class = 'tags'>
+            <li id = 'ux'>#UX</li>
+            <li id = 'front-end'>#FrontEnd</li>
+          </ul>
+
+          <section class = 'design-items'>
+            
+            <div class = 'design-card'>
+              <div class="card-image">
+                <img src="images/fridge-cover.png" alt="Iphone and ipad mock up of the website, showcasing the basic functions of monitoring food storage and expiration dates">
+              </div>
+              <div class="card-content">
+                <h2>FridgeMate</h2>
+                <ul class = 'tags'>
+                  <li id = 'ux'>#UX</li>
+                  <li id = 'front-end'>#FrontEnd</li>
+                </ul>
+                <p>A webpage product to help users stay connected to their food storage and reduce waste. </p>
+              </div>
+            </div>
+
+            <div class = 'design-card'>
+              <div class="card-image">
+                <img src="images/heatwise-cover.png" alt="Two Google Chrome mockup page showcasing the data collection page and student report page. ">
+              </div>
+              <div class="card-content">
+                <h2>Heatwise</h2>
+                <ul class = 'tags'>
+                  <li id = 'ux'>#UX</li>
+                </ul>
+                <p>A UX project to help teachers and students in Boston Public Schools to teach and learn environmental science in an engaging way. </p>
+              </div>
+            </div>
+
+          </section>
+
+        </section>
+
+        <div id = 'global-bottom-bar'></div>
+
      </main>
 
      <footer>
-        <p>© 2024 Chenan Lyu</p>
+        <ul id = 'footer'>
+          <li>By Chenan (Annie) Lyu, 2025-2026</li>
+          <li>You have reached the end. Thanks for scrolling :)</li>
+          <li>
+            <ul id = 'contact-footer'>
+              <li><a href = 'files/CV_2026spring.pdf'>Resumé</a></li>
+              <li> /</li>
+              <li><a href="https://www.linkedin.com/in/chenan-lyu-471806377">LinkedIn</a></li>
+              <li> /</li>
+              <li><a href="mailto:annielyuchenan@gmail.com">Contact</a></li>
+            </ul>
+          </li>
+        </ul>
      </footer>
      
   </body>
+</html>
