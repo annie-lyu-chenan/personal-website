@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- PUT A TITLE IN HERE -->
+        <title>Demo</title>
+        <!-- PUT A DESCRIPTION IN HERE -->
+        <meta name="description" content="This is a demo" />
+        <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
+        <link rel="stylesheet" href="styles/normalize.css" />
+        <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+        />
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+        />
+        <!-- LINK TO YOUR STYLES -->
+        <link rel="stylesheet" href="styles/styles.css" />
+        <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
+        <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
+        <script src="scripts/scripts.js" defer></script>
+    </head>
+    <body>
+    <!-- YOUR HTML GOES HERE -->
+        <main id = 'design' class = 'heatwise'>
+            <div id = 'top-bar'></div>
+
+            <section id = 'control'>
+                <button id = 'prev-article'><i class="ph ph-caret-left"></i> Previous Article</button>
+                <button id = 'back-to-home'>Back to Homepage</button>
+                <button id = 'next-article'> Next Article<i class="ph ph-caret-right"></i></button>
+            </section>
+            
+            <section id = 'nav'>
+                <div id = 'article-title'>
+                    <h1 id = 'mother-section'>Design</h1>
+                    <h1>/ Heatwise</h1>
+                </div>
+                <div id = 'article-tags'>
+                    <ul class = 'tags'>
+                        <li id = 'ux'>#UX</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id = 'article-content'>
+
+                <img class = 'hero' src = 'images/heatwise-flow.png' alt = 'Mock up of Heatwise landing, data hub, and feedback page on Chrome. ' />
+                
+                <div class='meta-data'>
+                    <p id = 'date'>Feb - May, 2025</p>
+                    <p id = 'co-author'>*The project was developed in collaboration with Emily Yang, Olivia Ma, and Isa Chen from Boston University. The project was built on a prize-winning proposal from Megan Rydar at Boston University, who also contributed to the research and design procedures. </p>
+                </div>
+
+                <div class = 'body-container'>  
+                    <div class = 'text'>
+                        
+                        <h2>Problem</h2>
+                        <p>Environmental science education lacks an engaging and accessible digital learning tool that effectively supports both educators and students. </p>
+                        <h2>User Research</h2>
+                        <h3>Target Audience</h3>
+                        <p>9th-12th grade students in Boston Public Schools and their environmental science teachers. </p>
+                        <h3>Methods</h3>
+                        <p>Focus groups and user interviews were carried out among 11th grade students and their environmental science teachers in Boston Green Academy. </p>
+                        <h3>User Interview Highlights</h3>
+                        <ul class = 'user-interviews'>
+                            <li>Students</li>
+                            <ul>
+                                <li>Long lectures about science were overwhelming and disengaging for students.</li>
+                                <li>Customization (for example, customizing the appearances of avatars), visualizations, and hands-on experiences could make students feel connected.</li>
+                                <li>Learning gaps were found among students.</li>
+                            </ul>
+                            <li>Educators</li>
+                            <ul>
+                                <li>Emphasized engagement and progress over grades.</li>
+                                <li>Extended learning curve of some existing tools (for example, story maps) had an impact on usability.</li>
+                                <li>Students only have access to Chromebooks in classroom. </li>
+                            </ul>
+                        </ul>
+
+                        <h2>Design System</h2>
+
+                        <h2>Challenges & Solutions</h2>
+                        <h3>Tracking Community Forest Planting</h3>
+                        <p>Miyawaki Method was integrated into Boston Public Schools' environmental science curriculum, enabling students to observe self-sustaining forest ecosystems within their own communities.</p>
+                        <img src = 'images/heatwise-datahub.png' alt = 'Before-after mock up comparison of Heatwise data hub on Chrome. ' />
+                        <p>A centralized data hub was developed to help teachers collect and visualize information related to the forests planted. The data hub functioned as both an engagement tool and an instructional resource.</p>
+                        <p>The assignment submission interface was redesigned with structured input fields and feedback features to streamline the data collection process.</p>
+                        <h3>Enhancing Engagement among Students with Varied Knowledge Levels</h3>
+                        <img src = 'images/heatwise-progress.png' alt = 'Chrome mock up of Heatwise landingpage and dashboard page on Chrome. ' />
+                        <p>Progress trackers were implemented in place of traditional grades, aligning with educators' goals of prioritizing student engagement over evaluation.</p>
+                        <p>Customizable characters were adopted from <a href = 'https://idori.com/?srsltid=AfmBOooYTOZRP42f4wu3oSgYr2lGqC0RS6eTomZXrRWYrehUV9-EPkPB'>Idori</a> to create a more personalized and motivating experience through visual identity and companionship.</p>
+
+                        <h2>Usability Testing</h2>
+                        <h3>Improvements</h3>
+                        <img src = 'images/heatwise-navbar.png' alt = 'Mock up comparison of browsing course menu using Heatwise navigation bar. ' />
+                        <p>Applied more robust course navigation other than hovering to see the next level of content. </p>
+
+                        <h2>Future Directions</h2>
+                        <p>After completing our phase of user research and initial design, the project was handed off to a new UX team for continued refinement and expansion.</p>
+                        <h3>UI Improvements</h3>
+                        <p>The current interface featured basic visual design and limited branding consistency. Future iterations should prioritize a more unified and polished UI system, with cohesive visual elements and a clearer design language.</p>
+                        <h3>Student-End UX Development</h3>
+                        <p>While the current version focuses on the teacher-facing experience based on our user research findings, future iterations will shift toward the student end. Specifically, expanding customization options and enhancing visual feedback, such as using a growing digital tree of students' choice to track assignment progress.</p>
+
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id = 'control'>
+                <button id = 'prev-article'><i class="ph ph-caret-left"></i>Previous Article</button>
+                <button id = 'back-to-home'>Back to Homepage</button>
+                <button id = 'next-article'>Next Article<i class="ph ph-caret-right"></i></button>
+            </section>
+
+        </main>
+        <footer>
+            <ul id = 'footer'>
+                <li>By Chenan (Annie) Lyu, 2025-2026</li>
+                <li>You have reached the end. Thanks for scrolling :)</li>
+                <li>
+                    <ul id = 'contact-footer'>
+                        <li><a href = 'files/CV_2026spring.pdf'>Resumé</a></li>
+                        <li> /</li>
+                        <li><a href="https://www.linkedin.com/in/chenan-lyu-471806377">LinkedIn</a></li>
+                        <li> /</li>
+                        <li><a href="mailto:annielyuchenan@gmail.com">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </footer>
+
+    </body>
+</html>

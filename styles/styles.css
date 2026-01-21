@@ -28,7 +28,6 @@ h3 {
     font-size: 1.5rem;
     font-style: italic;
     padding-left: 1rem;
-    margin-top: 3rem;
     border-left: 0.5rem solid;
     line-height: 2rem;
     box-sizing: border-box;
@@ -58,6 +57,10 @@ ul {
     font-size: 1.2rem;
 }
 
+a:visited {
+    color: inherit;
+}
+
 .self-intro span {
     font-weight: 500;
 }
@@ -85,6 +88,7 @@ ul {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    color: #1F1F1F;
 }
 
 .self-intro p {
@@ -341,6 +345,7 @@ ul {
     align-items: center;
     font-weight: 250;
     font-size: 1rem;
+    color: #1F1F1F80;
 }
 
 #contact-footer {
@@ -357,9 +362,8 @@ footer {
     padding-bottom: 2rem;
 }
 
-#homepage ul li a, 
 #contact-footer li a {
-    color: #1F1F1F; 
+    color: #1F1F1F80;
 }
 
 #homepage ul li:hover, 
@@ -380,6 +384,17 @@ main#insight #top-bar {
     z-index: 10;
 }
 
+main#design #top-bar {
+    background-color: #FFA858;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1.5rem;
+    width: 100vw;
+    z-index: 10;
+}
+
 main#insight {
     max-width: 70vw;
 }
@@ -389,7 +404,13 @@ main#insight #mother-section {
     white-space: nowrap;
 }
 
-main#insight .tags {
+main#design #mother-section {
+    color: #FFA858;
+    white-space: nowrap;
+}
+
+main#insight .tags, 
+main#design .tags {
     margin-top: 0;
 }
 
@@ -397,19 +418,19 @@ main#insight .tags {
     display: flex; 
     flex-direction: row;
     gap: 0.5rem;
-    margin-top: 4rem;
+    margin-top: 2rem;
 }
 
 #article-content {
     margin-top: 4rem;
 }
 
-#article-content #date, 
-#article-content #co-author {
+#article-content .meta-data {
     font-style: italic;
 }
 
-#article-content #date {
+#article-content #date, 
+#article-content #demo {
     font-weight: 350;
     margin-bottom: 0.5rem; 
     padding-bottom: 0;
@@ -419,6 +440,17 @@ main#insight .tags {
     font-weight: 250;
     margin-top: 0; 
     padding-top: 0;
+}
+
+#article-content #demo a {
+    text-decoration: none;
+    color: #FFA858;
+}
+
+#article-content #demo:hover {
+    text-shadow: 0 0 1px #FFA85899, 
+                0 6px 14px #FFA85840;
+    transform: translateY(-1px);
 }
 
 .body-container {
@@ -433,6 +465,11 @@ main#insight .tags {
     float: inline-start; 
 }
 
+.zestypaws .slideshow {
+    float: inline-end; 
+    margin: 0 0 0 2rem; 
+}
+
 .slideshow video {
     width: 100%;
     height: auto;
@@ -441,23 +478,40 @@ main#insight .tags {
     border: 1px solid #C2E427;
 }
 
+.text img {
+    width: 40%;
+    margin: 2rem 0 1rem 2rem; 
+    height: fit-content;
+    float: inline-end; 
+    object-fit: cover;
+    border-radius: 0.5rem;
+    border: 1px solid #FFA858;
+}
+
 main#insight h3 {
     border-left: 0.5rem solid #C2E427;
 }
 
+main#design h3 {
+    border-left: 0.5rem solid #FFA858;
+}
+
 #article-content h2 {
     margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 
 .spreadbeats #strategies > li, 
-.spreadbeats #evaluation > li {
+.spreadbeats #evaluation > li, 
+.heatwise .text > ul {
     font-weight: 400;
     font-size: 1.2rem;
     line-height: 2rem;
 }
 
 .spreadbeats #strategies ul,
-.spreadbeats #evaluation ul {
+.spreadbeats #evaluation ul, 
+.heatwise .user-interviews ul {
     list-style: disc;
     font-size: 1rem;
     line-height: 2rem;
@@ -465,7 +519,8 @@ main#insight h3 {
     font-style: italic;
 }
 
-.spreadbeats #recommendations-list {
+.spreadbeats #recommendations-list, 
+.zestypaws .text > ul {
     list-style: disc;
     font-size: 1.2rem;
     line-height: 2rem;
@@ -474,23 +529,41 @@ main#insight h3 {
     font-style: italic;
 }
 
-.spreadbeats details {
+.zestypaws #recommendations {
+    list-style: disc;
+    font-size: 1rem;
+    line-height: 2rem;
+    margin: 0.5rem auto 1.5rem 2rem;
+    font-style: italic;
+}
+
+
+.heatwise .text a {
+    color: inherit;
+}
+
+details {
     margin-top: 2rem;
 }
 
-.spreadbeats details summary {
+details summary {
     font-family: 'Bitter', serif;
     font-weight: 350;
     font-size: 1.2rem;
     color: #1F1F1F80;
 }
 
-summary::marker {
+#insight summary::marker {
     color: #C2E427;
     font-size: 1rem; 
 }
 
-.spreadbeats .references p {
+#design summary::marker {
+    color: #FFA858;
+    font-size: 1rem; 
+}
+
+.references p {
     font-size: 1rem;
     line-height: 1.5rem;
     color: #1F1F1F80;
@@ -501,4 +574,67 @@ main#insight #mother-section:hover {
     text-shadow: 0 0 1px #C2E42799, 
                 0 6px 14px #C2E42740;
     transform: translateY(-2px);
+}
+
+main#design #mother-section:hover {
+    text-decoration: underline;
+    text-shadow: 0 0 1px #FFA85899, 
+                0 6px 14px #FFA85840;
+    transform: translateY(-2px);
+}
+
+.insight-card a,
+.insight-card a:visited {
+    color: inherit;
+    text-decoration: none;
+}
+
+.insight-card:hover {
+    transform: translateY(-3px);
+}
+
+em {
+    font-style: italic;
+}
+
+#control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 6rem;
+}
+
+#control button {
+    border: none;
+    border-radius: 1.5rem;
+    background-color: transparent;
+    font-family: 'Bitter', serif;
+    font-weight: 250;
+    font-size: 1.2rem;
+    color: #1F1F1F;
+    cursor: pointer;
+}
+
+#control button:hover {
+    transform: translateY(-3px);
+}
+
+#demo .ph-caret-right {
+    color: #FFA858;
+}
+
+img.hero {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    box-shadow: 0 6px 14px #1f1f1f20;
+}
+
+.heatwise .text img {
+    width: 100%;
+    border: none; 
+    box-shadow: 0 6px 14px #1f1f1f20;
 }
