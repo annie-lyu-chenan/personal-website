@@ -53,45 +53,71 @@
 
             <section id = 'article-content'>
 
+                <img class = 'hero' src = 'images/fridge-flow.png' alt = 'Mock up of FridgeMate landing, shelf life search, and feedback page on Chrome. ' />
+                
                 <div class='meta-data'>
-                    <p id = 'demo'><a href = 'https://annie-lyu-chenan.github.io/fridge-manager/'>Try FridgeMate Live on your phone or tablet  <i class="ph ph-caret-right"></i></a></p>
+                    <p id = 'demo'><a href = 'https://annie-lyu-chenan.github.io/fridge-manager/'>Try FridgeMate live on your phone or tablet  <i class="ph ph-caret-right"></i></a></p>
                     <p id = 'date'>November - December 2025</p>
                 </div>
 
-                <div class = 'body-container'>            
-                    <div class = 'text'>
-                        
+                <div class = 'body-container'>
+                    <div class = 'text'>            
                         <h2>Problem</h2>
                         <p>Despite growing awareness of food waste, individuals lack an intuitive, low-barrier tool for managing their fridge storage at home. </p>
                         
-                        <img src = 'images/expired-food.jpg' alt = 'Expired chobanies on table' />
-                        <h2>User Research Insights</h2>
-                        <p>Media planners constitute the primary target audience for the campaign because they serve as the key decision-makers responsible for executing ad bookings and optimizing media choices to achieve defined advertising goals. </p>
+                        <h2>User Research</h2>
+                        <h3>Target Audience</h3>
+                        <p>Anyone with a fridge, especially disorganized people who tend to forget what they own in their fridge. </p>
+                        <h3>Methods</h3>
+                        <p>User interviews were conducted across a range of household contexts.</p>
+                        <h3>User Interview Highlights</h3>
+                        <ul class = 'user-interviews'>
+                            <li>Users often purchase duplicate items or forget about existing food until it expires, regardless of grocery shopping habits or household sizes. </li>
+                            <li>The burden of expired food extends beyond environmental responsibility and household maintenance. It also creates mental stress and reinforces feelings of disorganization.</li>
+                        </ul> 
 
                         <h2>Design System</h2>
+                        <img id = 'design-system' src = 'images/fridge-design.png' alt = 'FridgeMate design system including color palette, typography, and components like buttons and input fields.' />
+                        <p>The design system adopts clean, simplified, and easily distinguishable colors and UI elements to support quick recognition and ease of use.</p>
 
                         <h2>Challenges & Solutions</h2>
                         <h3>User Flow</h3>
-                        <p>To increase awareness of Spotify's multi-format advertising solutions by 35% to 40% among media planners across key markets, including the United States, the United Kingdom, Germany, and India, within three months of campaign launch.</p>
+                        <img src = 'images/fridge-userflow1.png' alt = 'FridgeMate initial and revised version of the user flow diagram. ' />
+                        <p>The initial user flow relied on typing, automatic associations, and customizable inputs for adding new items. However, typing proved to be less accessible on mobile devices, particularly smartphones. After several iterations, a search system inspired by grocery store self-checkout interfaces was introduced. Users can now search for items by category and by initial letter. </p>
+                        <p>The searching and suggested shelf life features were supported by FoodKeeper API, which offered default food categories and shelf life information for a variety of common items.</p>
+                        <img src = 'images/fridge-userflow2.png' alt = 'FridgeMate original and revised version of the homepage and item management user flow. ' />
+                        <p>Compared to earlier versions, the homepage was simplified for mobile users. Less readable displays and complex quantity input flows was replaced by two horizontally scrollable cards, making it easier to browse, edit, and manage food items. Additionally, features such as recipe scheduling and food-saving calculations were removed to streamline the user flow and reduce cognitive load.</p>
                         <h3>Accessibility</h3>
-                        <p>To improve positive perception and brand favorability toward Spotify advertising by 25% to 30% within six months, as measured through surveys and qualitative interviews with media planners.</p>
+                        <img src = 'images/fridge-accessibility.png' alt = 'FridgeMate color-blind mode mock up.' />
+                        <p>Since expiring and in-stock items are differentiated using red and green, a color-blind mode was introduced that replaces green UI elements with blue, improving accessibility for users with color vision deficiencies.</p>
 
                         <h2>Usability Testing</h2>
-                        <p>Media planners constitute the primary target audience for the campaign because they serve as the key decision-makers responsible for executing ad bookings and optimizing media choices to achieve defined advertising goals. </p>
+                        <h3>Methods</h3>
+                        <p>This study employed a mixed-methods usability testing approach, combining task-based testing and post-task interviews to evaluate the usability and user experience of the FridgeMate demo. </p>
+                        <h3>Participants</h3>
+                        <p>A total of 5 participants, aged between 23 and 51, were recruited for this study. All participants currently own a fridge or share a fridge with others. </p>
+                        <h3>Improvements</h3>
+                        <ul class = 'usability-testing'>
+                            <img src = 'images/fridge-uxrefine1.png' alt = 'Improved onboarding instructions adopted from usability testing feedback.' />
+                            <li>Clearer onboarding instructions for first-time users. </li>
+                            <img src = 'images/fridge-uxrefine.png' alt = 'Improved visual cues adopted from usability testing feedback.' />
+                            <li>More intuitive visual cues to display the total number of stored items.</li>
+                        </ul>
 
                         <h2>Future Directions</h2>
                         <h3>User Interface</h3>
-                        <p>To increase awareness of Spotify's multi-format advertising solutions by 35% to 40% among media planners across key markets, including the United States, the United Kingdom, Germany, and India, within three months of campaign launch.</p>
+                        <p>Introduce additional intuitive visual cues and features to support quicker understanding and navigation. Potential features include pop-up alerts for expiring items, reverse-chronological item listing based on shelf life, and a “scan-to-add” functionality for quicker input.</p>
                         <h3>Accessibility</h3>
-                        <p>To improve positive perception and brand favorability toward Spotify advertising by 25% to 30% within six months, as measured through surveys and qualitative interviews with media planners.</p>
+                        <p>Expand accessibility to support a broader range of users, including individuals with lower English proficiency and older adults with limited technical experience. This may involve adjustable font sizes, clearer onboarding instructions, and more customizable interface settings, according to user research results. </p>
 
                         <details>
                             <summary>Tech Stack & Sources</summary>
                             <div class="references">
-                                <p>Adam, P. (2016, September 27). Branded Moments bring vertical video ads to Spotify. Marketing Dive. https://www.marketingdive.com/news/branded-moments-bring-vertical-video-ads-to-spotify/428372/</p>
+                                <p>Tech Stack: HTML, CSS, JavaScript, Figma, ChatGPT 4o, GitHub Copilot. </p>
+                                <p>Sources: Unsplash, MDN web docs, Phosphor Icons, USDA Department of Agriculture Food Safety and Inspection Service FoodKeeper data. </p>
+                                <p>For additional details, please refer to the Documents section on the <a href = 'https://annie-lyu-chenan.github.io/fridge-manager/'>FridgeMate</a> website.</p>
                             </div>
                         </details>
-
                     </div>
                 </div>
                 

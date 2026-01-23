@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- PUT A TITLE IN HERE -->
+        <title>Demo</title>
+        <!-- PUT A DESCRIPTION IN HERE -->
+        <meta name="description" content="This is a demo" />
+        <!-- LINK TO NORMALIZE (FOR CONSISTENCY) -->
+        <link rel="stylesheet" href="styles/normalize.css" />
+        <!-- LINK TO ANY FRAMEWORK STYLES HERE-->
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+        />
+        <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css"
+        />
+        <!-- LINK TO YOUR STYLES -->
+        <link rel="stylesheet" href="styles/styles.css" />
+        <!-- LINK TO EXTERNAL JS LIBRARIES HERE -->
+        <!-- LINK TO YOUR JS HERE. NOTE THE DEFER ATTRIBUTE. -->
+        <script src="scripts/scripts.js" defer></script>
+    </head>
+    <body>
+    <!-- YOUR HTML GOES HERE -->
+        <main id = 'insight' class = 'feeding-ai'>
+            <div id = 'top-bar'></div>
+
+            <section id = 'control'>
+                <button id = 'prev-article'><i class="ph ph-caret-left"></i>Previous Article</button>
+                <button id = 'back-to-home'>Back to Homepage</button>
+                <button id = 'next-article'>Next Article<i class="ph ph-caret-right"></i></button>
+            </section>
+            
+            <section id = 'nav'>
+                <div id = 'article-title'>
+                    <h1 id = 'mother-section'>Insights /</h1>
+                    <h1>Feeding AI</h1>
+                </div>
+                <div id = 'article-tags'>
+                    <ul class = 'tags'>
+                        <li id = 'journalism'>#Journalism</li>
+                        <li id = 'data-journalism'>#DataJournalism</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id = 'article-content'>
+
+                <div class='meta-data'>
+                    <p id = 'demo'><a href = 'https://mp.weixin.qq.com/s/t_MrkehMGh9BvecHbr1jxA'>Read the full article in Chinese<i class="ph ph-caret-right"></i></a></p>
+                    <p id = 'date'>March - June 2023</p>
+                    <p id = 'co-author'>*The project was developed in collaboration with Shiyu Chen, Yifan Li, Ruijia Zhao, and Mengmeng Wu from Fudan University School of Journalism. Illustrations in cover and infographics were generated using Midjourney. </p>
+                </div>
+                
+                <div class = 'body-container'>           
+                    <div class = 'text'>
+                        <h2>Abstract</h2>
+                        <p>The article focused on the overlooked effort behind AI's rapid development, highlighting the role of AI annotators, also known as "<em>ghost workers</em>” in the industry. </p>
+                        <p>AI annotators are people spending long hours performing repetitive, high-focus tasks like labeling images and transcribing audio. The role is vital for training machine learning models, but the workers themselves experience low pay, little job security, and health issues. </p>
+                        <p>Potential reasons that make workers feel less secure include skimming from various outsourcing layers, as well as the possibility of being replaced by automation. </p>
+
+                        <h2>Infographics</h2>
+                        <div class = 'infographics'>
+                            <div class = 'infographics-display-col1'>
+                            <figure>
+                                <figcaption>According to hiring posts, most AI annotation roles did not require prior experience, but emphasized traits such as responsibility and patience, indicating a low barrier to entry.</figcaption>
+                                <img src = 'images/ai-hiring.png' >
+                            </figure>
+                            <figure>
+                                <figcaption>AI annotators frequently reported low pay, limited career advancement, and excessive overtime on social media platforms.</figcaption>
+                                <img src = 'images/ai-trouble.png' >
+                            </figure>
+                            <figure>
+                                <figcaption>Salaries are low, averaging under ¥6,000 per month even in top-tier cities, with wider gaps in lower-tier cities.</figcaption> 
+                                <img src = 'images/ai-salary.png' >  
+                            </figure>
+                           
+                        </div>
+                        <div class = 'infographics-display-col2'>
+                            <figure>
+                                <figcaption>Workers reported high stress levels and health issues, with common complaints including exhaustion, eye strain, and the physical toll of repetitive tasks.</figcaption>
+                                <img src = 'images/ai-body.png' >
+                            </figure>
+                            <figure>
+                                <figcaption>Employers of AI annotators were primarily small- and medium-sized enterprises. Workers noted that high platform deductions were a key reason for persistently low wages.</figcaption>
+                                <img src = 'images/ai-employers.png' >
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id = 'control'>
+                <button id = 'prev-article'><i class="ph ph-caret-left"></i>Previous Article</button>
+                <button id = 'back-to-home'>Back to Homepage</button>
+                <button id = 'next-article'>Next Article<i class="ph ph-caret-right"></i></button>
+            </section>
+
+        </main>
+        <footer>
+            <ul id = 'footer'>
+                <li>By Chenan (Annie) Lyu, 2025-2026</li>
+                <li>You have reached the end. Thanks for scrolling :)</li>
+                <li>
+                    <ul id = 'contact-footer'>
+                        <li><a href = 'files/CV_2026spring.pdf'>Resumé</a></li>
+                        <li> /</li>
+                        <li><a href="https://www.linkedin.com/in/chenan-lyu-471806377">LinkedIn</a></li>
+                        <li> /</li>
+                        <li><a href="mailto:annielyuchenan@gmail.com">Contact</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </footer>
+
+    </body>
+</html>
