@@ -391,6 +391,17 @@ footer {
     transform: translateY(-1px);
 }
 
+main#research #top-bar {
+    background-color: #635BFF;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 1.5rem;
+    width: 100vw;
+    z-index: 10;
+}
+
 main#insight #top-bar {
     background-color: #C2E427;
     position: fixed;
@@ -417,6 +428,11 @@ main#insight {
     max-width: 70vw;
 }
 
+main#research #mother-section {
+    color: #635BFF;
+    white-space: nowrap;
+}
+
 main#insight #mother-section {
     color: #C2E427;
     white-space: nowrap;
@@ -431,6 +447,7 @@ main#design #mother-section {
     cursor: pointer;
 }
 
+main#research .tags,
 main#insight .tags, 
 main#design .tags {
     margin-top: 0;
