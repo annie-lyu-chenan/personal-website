@@ -646,6 +646,8 @@ main#design #mother-section:hover {
     transform: translateY(-2px);
 }
 
+.research-card a,
+.research-card a:visited,
 .insight-card a,
 .insight-card a:visited,
 .design-card a,
