@@ -840,6 +840,12 @@ figcaption {
 
     .control {
         margin: 6rem 0 4rem 0;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .control .prev-article {
+        display: none;
     }
 
     .infographics {
