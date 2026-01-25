@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
         motherSection.addEventListener('click', () => {
             const parentMain = motherSection.closest('main');
             if (parentMain && parentMain.id) {
-                window.location.href = `index-en.html#${parentMain.id}`;
+                window.location.href = `index.html#${parentMain.id}`;
             }
         });
     }
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
     homeBtn.forEach(button => {
         button.addEventListener('click', () => {
             console.log('Home clicked');
-            window.location.href = 'index-en.html';
+            window.location.href = 'index.html';
         });
     });
 });
