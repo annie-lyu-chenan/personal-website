@@ -2,11 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const researchSection = document.getElementsByClassName('project-item-research');
     const insightsSection = document.getElementsByClassName('project-item-insight');
     const designSection = document.getElementsByClassName('project-item-design');
-    const tagElements = document.querySelectorAll('.tags li');
     const prevBtn = document.querySelectorAll('button.prev-article');
     const nextBtn = document.querySelectorAll('button.next-article');
     const homeBtn = document.querySelectorAll('button.back-to-home');
     const motherSection = document.getElementById('mother-section');
+    const pageSections = Array.from(document.querySelectorAll('main > section.page'));
     const articleOrder = [
         'spreadbeats.html',
         'zestypaws.html',
@@ -17,80 +17,103 @@ document.addEventListener('DOMContentLoaded', () => {
         'heatwise.html'
     ];
 
-    const globalBar = document.getElementById('global-top-bar');
-    if (globalBar) {
-        const globalBottomBar = document.getElementById('global-bottom-bar');
-        const sections = document.querySelectorAll('.page');
+    function updateActiveTopBar() {
+        let activeSection = pageSections[0];
+        const triggerLine = window.innerHeight * 0.75;
 
-        const sectionColors = {
-            home: '#1F1F1F',
-            research: "#635BFF",
-            insight: "#C2E427",
-            design: "#FFA858"
-        };
-
-        const sectionOrder = Object.keys(sectionColors);
-
-        function getCurrentSectionId() {
-            let current = '';
-            const triggerLine = window.innerHeight * 0.1; 
-
-            sections.forEach(section => {
-                const rect = section.getBoundingClientRect();
-                if (rect.top <= triggerLine && rect.bottom >= triggerLine) {
-                    current = section.id;
-                }
-            });
-
-            return current;
-        }
-
-        function updateGlobalBar(currentId) {
-            globalBar.innerHTML = '';
-            globalBottomBar.innerHTML = '';
-            const currentIndex = sectionOrder.indexOf(currentId);
-
-            if (currentIndex === -1) return;
-
-            for (let i = 0; i <= currentIndex; i++) {
-                const id = sectionOrder[i];
-                const bar = document.createElement('div');
-                bar.classList.add('section-bar');
-                bar.style.backgroundColor = sectionColors[id];
-
-                if (i === currentIndex) {
-                    bar.classList.add('is-active');
-                } else {
-                    bar.classList.add('is-history');
-                    bar.onclick = () => {
-                        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-                    };
-                }
-
-                globalBar.appendChild(bar);
+        pageSections.forEach(section => {
+            if (section.getBoundingClientRect().top <= triggerLine) {
+                activeSection = section;
             }
-            
-            for (let j = currentIndex + 1; j < sectionOrder.length; j++) {
-                const id = sectionOrder[j];
-                const bar = document.createElement('div');
-                bar.classList.add('section-bar');
-                bar.style.backgroundColor = sectionColors[id];
-                bar.style.height = '0.5rem';
-                bar.onclick = () => {
-                    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-                };
-                globalBottomBar.appendChild(bar);
-            }
-        }
-
-        window.addEventListener('scroll', () => {
-            let currentId = getCurrentSectionId();
-            updateGlobalBar(currentId);
         });
 
-        updateGlobalBar(getCurrentSectionId());
+        pageSections.forEach(section => {
+            const topBar = section.querySelector('.section-top-bar');
+            if (topBar) {
+                topBar.classList.toggle('is-active', section === activeSection);
+            }
+        });
     }
 
+    if (pageSections.length > 0) {
+        updateActiveTopBar();
+        window.addEventListener('scroll', updateActiveTopBar, { passive: true });
+        window.addEventListener('resize', updateActiveTopBar);
+    }
+
+    const revealTargets = Array.from(document.querySelectorAll([
+        '#homepage',
+        '#toc',
+        '#home .self-intro',
+        '.section-layout',
+        '.section-gallery .research-card',
+        '.section-gallery .insight-card',
+        '.section-gallery .design-card',
+        '#nav',
+        '#article-content > *',
+        'footer'
+    ].join(', ')));
+
+    const getScrollTop = () => window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    let lastScrollTop = getScrollTop();
+    let isScrollingDown = false;
+
+    function revealTarget(target) {
+        target.classList.add('has-revealed', 'is-revealing');
+        target.addEventListener('animationend', () => {
+            target.classList.remove('is-revealing');
+        }, { once: true });
+    }
+
+    function targetIsInView(target) {
+        const rect = target.getBoundingClientRect();
+        return rect.top < window.innerHeight * 0.88 && rect.bottom > 0;
+    }
+
+    function revealVisibleTargets() {
+        if (!isScrollingDown) {
+            return;
+        }
+
+        revealTargets.forEach(target => {
+            if (!target.classList.contains('has-revealed') && targetIsInView(target)) {
+                revealTarget(target);
+            }
+        });
+    }
+
+    if (revealTargets.length > 0) {
+        revealTargets.forEach(target => {
+            target.classList.add('reveal-on-scroll');
+            if (targetIsInView(target)) {
+                target.classList.add('has-revealed');
+            }
+        });
+
+        document.body.classList.add('reveal-ready');
+
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && isScrollingDown && !entry.target.classList.contains('has-revealed')) {
+                    revealTarget(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.12
+        });
+
+        revealTargets.forEach(target => revealObserver.observe(target));
+
+        const updateScrollDirection = () => {
+            const currentScrollTop = getScrollTop();
+            isScrollingDown = currentScrollTop > lastScrollTop;
+            lastScrollTop = currentScrollTop;
+            revealVisibleTargets();
+        };
+
+        window.addEventListener('scroll', updateScrollDirection, { passive: true });
+        document.body.addEventListener('scroll', updateScrollDirection, { passive: true });
+    }
 
     function scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
@@ -127,10 +150,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     let activeTag = 'all';
+    const filterTagSelector = '#all-tags li, #toc .home-cluster .tags li, main > section.page .section-top-bar li, section.page > .tags li, .section-layout > .tags li';
+    const filterTags = Array.from(document.querySelectorAll(filterTagSelector))
+        .filter(tagEl => !tagEl.closest('.card-content'));
+
+    filterTags.forEach(tagEl => {
+        tagEl.classList.add('filter-tag');
+    });
 
     function applyTagFilter(tag) {
         const allProjects = document.querySelectorAll('.insight-card, .design-card, .research-card');
-        const allTags = document.querySelectorAll('#all-tags li, section.page .tags li');
 
         const isSameTag = (activeTag === tag);
         activeTag = isSameTag ? 'all' : tag;
@@ -143,18 +172,18 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 
-        allTags.forEach(tagEl => {
+        filterTags.forEach(tagEl => {
             tagEl.classList.toggle('is-active', tagEl.id === activeTag && activeTag !== 'all');
         });
     }
 
-    document.querySelectorAll('#all-tags li, section.page .tags li').forEach(tagEl => {
+    filterTags.forEach(tagEl => {
         tagEl.addEventListener('click', (e) => {
             e.stopPropagation();
             const tag = tagEl.id;
             applyTagFilter(tag);
 
-            if (tagEl.closest('#all-tags')) {
+            if (tagEl.closest('#all-tags') || tagEl.closest('#toc')) {
                 if (tagEl.classList.contains('research')) {
                     document.getElementById('research').scrollIntoView({ behavior: 'smooth' });
                 } else if (tagEl.classList.contains('insight')) {
